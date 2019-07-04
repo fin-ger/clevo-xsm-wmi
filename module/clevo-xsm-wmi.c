@@ -1415,7 +1415,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P870DM",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P870DM"),
+			DMI_MATCH(DMI_BOARD_NAME, "P870DM"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
@@ -1423,7 +1423,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P7xxDM(-G)",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P7xxDM(-G)"),
+			DMI_MATCH(DMI_BOARD_NAME, "P7xxDM(-G)"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
@@ -1431,7 +1431,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P750ZM",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P750ZM"),
+			DMI_MATCH(DMI_BOARD_NAME, "P750ZM"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
@@ -1439,7 +1439,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P370SM-A",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P370SM-A"),
+			DMI_MATCH(DMI_BOARD_NAME, "P370SM-A"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1447,7 +1447,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P17SM-A",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P17SM-A"),
+			DMI_MATCH(DMI_BOARD_NAME, "P17SM-A"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
@@ -1455,7 +1455,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P15SM1-A",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P15SM1-A"),
+			DMI_MATCH(DMI_BOARD_NAME, "P15SM1-A"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1463,7 +1463,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P15SM-A",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P15SM-A"),
+			DMI_MATCH(DMI_BOARD_NAME, "P15SM-A"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1471,7 +1471,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P17SM",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P17SM"),
+			DMI_MATCH(DMI_BOARD_NAME, "P17SM"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_8_color_ops,
@@ -1479,7 +1479,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P15SM",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P15SM"),
+			DMI_MATCH(DMI_BOARD_NAME, "P15SM"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_8_color_ops,
@@ -1487,7 +1487,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P150EM",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P150EM"),
+			DMI_MATCH(DMI_BOARD_NAME, "P150EM"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_8_color_ops,
@@ -1495,7 +1495,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 		{
 		.ident = "Clevo P65_67RSRP",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P65_67RSRP"),
+			DMI_MATCH(DMI_BOARD_NAME, "P65_67RSRP"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1503,7 +1503,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P65xRP",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P65xRP"),
+			DMI_MATCH(DMI_BOARD_NAME, "P65xRP"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1511,7 +1511,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P150EM",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P15xEMx"),
+			DMI_MATCH(DMI_BOARD_NAME, "P15xEMx"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_8_color_ops,
@@ -1519,7 +1519,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P7xxDM2(-G)",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P7xxDM2(-G)"),
+			DMI_MATCH(DMI_BOARD_NAME, "P7xxDM2(-G)"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
@@ -1527,7 +1527,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P950HP6",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P95_HP,HR,HQ"),
+			DMI_MATCH(DMI_BOARD_NAME, "P95_HP,HR,HQ"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1535,7 +1535,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
                 .ident = "Clevo P95_HP",
                 .matches = {
-                        DMI_MATCH(DMI_PRODUCT_NAME, "P95_HP"),
+                        DMI_MATCH(DMI_BOARD_NAME, "P95_HP"),
                 },
                 .callback = clevo_xsm_dmi_matched,
                 .driver_data = &kb_full_color_ops,
@@ -1543,7 +1543,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo N850HJ",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "N85_N87"),
+			DMI_MATCH(DMI_BOARD_NAME, "N85_N87"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1551,7 +1551,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P775DM3(-G)",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P775DM3(-G)"),
+			DMI_MATCH(DMI_BOARD_NAME, "P775DM3(-G)"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1559,7 +1559,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo N850HJ",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "N85_N87"),
+			DMI_MATCH(DMI_BOARD_NAME, "N85_N87"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1567,7 +1567,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo N870HK",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "N85_N87,HJ,HJ1,HK1"),
+			DMI_MATCH(DMI_BOARD_NAME, "N85_N87,HJ,HJ1,HK1"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
@@ -1575,7 +1575,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
   {
 		.ident = "Clevo N870HP6",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "N85_87HP6"),
+			DMI_MATCH(DMI_BOARD_NAME, "N85_87HP6"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
@@ -1583,7 +1583,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
     .ident = "Clevo P65_67HSHP",
     .matches = {
-        DMI_MATCH(DMI_PRODUCT_NAME, "P65_67HSHP"),
+        DMI_MATCH(DMI_BOARD_NAME, "P65_67HSHP"),
     },
     .callback = clevo_xsm_dmi_matched,
     .driver_data = &kb_full_color_ops,
@@ -1592,7 +1592,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P7xxDM(-G)",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "Deimos/Phobos 1x15S"),
+			DMI_MATCH(DMI_BOARD_NAME, "Deimos/Phobos 1x15S"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
@@ -1600,7 +1600,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P750ZM",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P5 Pro SE"),
+			DMI_MATCH(DMI_BOARD_NAME, "P5 Pro SE"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
@@ -1608,7 +1608,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
 		.ident = "Clevo P750ZM",
 		.matches = {
-			DMI_MATCH(DMI_PRODUCT_NAME, "P5 Pro"),
+			DMI_MATCH(DMI_BOARD_NAME, "P5 Pro"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
@@ -1633,7 +1633,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 	{
         .ident = "Clevo P7xxDM3(-G)",
         .matches = {
-            DMI_MATCH(DMI_PRODUCT_NAME, "P7xxDM3(-G)"),
+            DMI_MATCH(DMI_BOARD_NAME, "P7xxDM3(-G)"),
         },
         .callback = clevo_xsm_dmi_matched,
         .driver_data = &kb_full_color_ops,
