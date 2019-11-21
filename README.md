@@ -84,6 +84,8 @@ run '/usr/bin/clevo-xsm-wmi -s' at shutdown/change to save state
 
 Arch Linux: [Module](https://aur.archlinux.org/packages/clevo-xsm-wmi/) [DKMS](https://aur.archlinux.org/packages/clevo-xsm-wmi-dkms/) [Utility](https://aur.archlinux.org/packages/clevo-xsm-wmi-util/)
 
+Gentoo Linux: [ebuild](./dist/gentoo/app-laptop/clevo-xsm-wmi/)
+
 ### Common issues
 
 * 'Can't read private key' during 'make install'.
