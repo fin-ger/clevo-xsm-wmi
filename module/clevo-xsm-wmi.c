@@ -1263,13 +1263,6 @@ clevo_read_fan(int idx)
 }
 
 static ssize_t
-clevo_hwmon_show_name(struct device *dev, struct device_attribute *attr,
-			  char *buf)
-{
-	return sprintf(buf, CLEVO_XSM_DRIVER_NAME "\n");
-}
-
-static ssize_t
 clevo_hwmon_show_fan1_input(struct device *dev, struct device_attribute *attr,
 				char *buf)
 {
@@ -1333,7 +1326,6 @@ clevo_hwmon_show_temp2_label(struct device *dev, struct device_attribute *attr,
 }
 #endif
 
-static SENSOR_DEVICE_ATTR(name, S_IRUGO, clevo_hwmon_show_name, NULL, 0);
 static SENSOR_DEVICE_ATTR(fan1_input, S_IRUGO, clevo_hwmon_show_fan1_input, NULL, 0);
 static SENSOR_DEVICE_ATTR(fan1_label, S_IRUGO, clevo_hwmon_show_fan1_label, NULL, 0);
 #ifdef EXPERIMENTAL
@@ -1348,7 +1340,6 @@ static SENSOR_DEVICE_ATTR(temp2_label, S_IRUGO, clevo_hwmon_show_temp2_label, NU
 #endif
 
 static struct attribute *hwmon_default_attributes[] = {
-	&sensor_dev_attr_name.dev_attr.attr,
 	&sensor_dev_attr_fan1_input.dev_attr.attr,
 	&sensor_dev_attr_fan1_label.dev_attr.attr,
 #ifdef EXPERIMENTAL
@@ -1368,25 +1359,37 @@ static const struct attribute_group hwmon_default_attrgroup = {
 	.attrs = hwmon_default_attributes,
 };
 
+static const struct attribute_group *hwmon_attr_groups[] = {
+  &hwmon_default_attrgroup,
+  NULL
+};
+
 static int
 clevo_hwmon_init(struct device *dev)
 {
 	int ret;
 
 	clevo_hwmon = kzalloc(sizeof(*clevo_hwmon), GFP_KERNEL);
-	if (!clevo_hwmon)
+
+  if (!clevo_hwmon) {
 		return -ENOMEM;
-	clevo_hwmon->dev = hwmon_device_register(dev);
-	if (IS_ERR(clevo_hwmon->dev)) {
+  }
+
+	clevo_hwmon->dev = hwmon_device_register_with_groups(
+    dev,
+    CLEVO_XSM_DRIVER_NAME,
+    NULL,
+    hwmon_attr_groups
+  );
+
+  if (IS_ERR(clevo_hwmon->dev)) {
+    CLEVO_XSM_ERROR("Failed to register device\n");
 		ret = PTR_ERR(clevo_hwmon->dev);
 		clevo_hwmon->dev = NULL;
 		return ret;
 	}
 
-	ret = sysfs_create_group(&clevo_hwmon->dev->kobj, &hwmon_default_attrgroup);
-	if (ret)
-		return ret;
-	return 0;
+  return 0;
 }
 
 static int
@@ -1657,7 +1660,11 @@ static int __init clevo_xsm_init(void)
 		return -EINVAL;
 	}
 
-	dmi_check_system(clevo_xsm_dmi_table);
+	if (!dmi_check_system(clevo_xsm_dmi_table)) {
+    CLEVO_XSM_ERROR("Your device is not supported by this module\n");
+    CLEVO_XSM_INFO("If you are a developer you may look into clevo_xsm_dmi_table to see if your model is not registered correctly\n");
+    return -ENODEV;
+  }
 
 	if (!wmi_has_guid(CLEVO_EVENT_GUID)) {
 		CLEVO_XSM_INFO("No known WMI event notification GUID found\n");
@@ -1705,7 +1712,11 @@ static int __init clevo_xsm_init(void)
 		CLEVO_XSM_ERROR("Sysfs attribute creation failed for color\n");
 
 #ifdef CLEVO_HAS_HWMON
-	clevo_hwmon_init(&clevo_xsm_platform_device->dev);
+	err = clevo_hwmon_init(&clevo_xsm_platform_device->dev);
+
+  if (unlikely(err)) {
+    CLEVO_XSM_ERROR("Failed to initialize hwmon for clevo device\n");
+  }
 #endif
 
 	return 0;
